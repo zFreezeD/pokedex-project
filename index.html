@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <script src="arrays.js"></script>
+    <script src="script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Jockey+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body onload="start()">
+
+    <header id="header" class="header header-mobile">
+
+        <div id="header-logo" class="header-logo">
+            <div>
+                <img src="./img/pokedexlogo.png">
+            </div>
+            <div class="header-line">
+
+            </div>
+        </div>
+
+        <div class="header-type-grid">
+            <div class="search-container">
+                <input id="search-type" placeholder="Pidgey..." style="text-indent:50px;" class="header-type-search">
+                <div class="search-language-container">
+                    <img onclick="ChangeLanguage('english')" id="flag-english" class="language-flag-active"
+                        src="./img/icons/english.png">
+                    <img onclick="ChangeLanguage('german')" id="flag-german" class="language-flag"
+                        src="./img/icons/germany.png">
+                </div>
+            </div>
+            <div id="side-type-all" onclick="SearchType('all')" class="header-type-all"
+                style="background-color: var(--tallhalf)">
+                <img src="./img/types/globe-6-64 1.png">
+                <p>ALL</p>
+            </div>
+            <div id="side-type-0" onclick="SearchType('grass')" class="header-type-main"
+                style="background-color: var(--tgrasshalf)">
+                <img src="./img/types/Grass.png">
+                <p>GRASS</p>
+            </div>
+            <div id="side-type-1" onclick="SearchType('bug')" class="header-type-main"
+                style="background-color: var(--tbughalf)">
+                <img src="./img/types/Bug.png">
+                <p>BUG</p>
+            </div>
+            <div id="side-type-2" onclick="SearchType('fighting')" class="header-type-main"
+                style="background-color: var(--tfightinghalf)">
+                <img src="./img/types/Fighting.png">
+                <p>FIGHTING</p>
+            </div>
+            <div id="side-type-3" onclick="SearchType('rock')" class="header-type-main"
+                style="background-color: var(--trockhalf)">
+                <img src="./img/types/Rock.png">
+                <p>ROCK</p>
+            </div>
+            <div id="side-type-4" onclick="SearchType('ice')" class="header-type-main"
+                style="background-color: var(--ticehalf)">
+                <img src="./img/types/Ice.png">
+                <p>ICE</p>
+            </div>
+            <div id="side-type-5" onclick="SearchType('normal')" class="header-type-main"
+                style="background-color: var(--tnormalhalf)">
+                <img src="./img/types/Normal.png">
+                <p>NORMAL</p>
+            </div>
+            <div id="side-type-6" onclick="SearchType('water')" class="header-type-main"
+                style="background-color: var(--twaterhalf)">
+                <img src="./img/types/Water.png">
+                <p>WATER</p>
+            </div>
+            <div id="side-type-7" onclick="SearchType('flying')" class="header-type-main"
+                style="background-color: var(--tflyinghalf)">
+                <img src="./img/types/Flying.png">
+                <p>FLYING</p>
+            </div>
+            <div id="side-type-8" onclick="SearchType('ground')" class="header-type-main"
+                style="background-color: var(--tgroundhalf)">
+                <img src="./img/types/Ground.png">
+                <p>GROUND</p>
+            </div>
+            <div id="side-type-9" onclick="SearchType('steel')" class="header-type-main"
+                style="background-color: var(--tsteelhalf)">
+                <img src="./img/types/Steel.png">
+                <p>STEEL</p>
+            </div>
+            <div id="side-type-10" onclick="SearchType('poison')" class="header-type-main"
+                style="background-color: var(--tpoisonhalf)">
+                <img src="./img/types/Poison.png">
+                <p>POISON</p>
+            </div>
+            <div id="side-type-11" onclick="SearchType('dragon')" class="header-type-main"
+                style="background-color: var(--tdragonhalf)">
+                <img src="./img/types/Dragon.png">
+                <p>DRAGON</p>
+            </div>
+            <div id="side-type-12" onclick="SearchType('electric')" class="header-type-main"
+                style="background-color: var(--telectrichalf)">
+                <img src="./img/types/Electric.png">
+                <p>ELECTRIC</p>
+            </div>
+            <div id="side-type-13" onclick="SearchType('ghost')" class="header-type-main"
+                style="background-color: var(--tghosthalf)">
+                <img src="./img/types/Ghost.png">
+                <p>GHOST</p>
+            </div>
+            <div id="side-type-14" onclick="SearchType('fire')" class="header-type-main"
+                style="background-color: var(--tfirehalf)">
+                <img src="./img/types/Fire.png">
+                <p>FIRE</p>
+            </div>
+            <div id="side-type-15" onclick="SearchType('dark')" class="header-type-main"
+                style="background-color: var(--tdarkhalf)">
+                <img src="./img/types/Dark.png">
+                <p>DARK</p>
+            </div>
+            <div id="side-type-16" onclick="SearchType('psychic')" class="header-type-main"
+                style="background-color: var(--tpsychichalf)">
+                <img src="./img/types/Psychic.png">
+                <p>PSYCHIC</p>
+            </div>
+
+
+    </header>
+
+    <div>
+        <div id="side-menu-button" onclick="ChangeSideMenu()" class="header-menu-open-container">
+            <img src="./img/arrowleft.png">
+        </div>
+    </div>
+
+    <div class="main">
+        <div id="landing" class="container">
+            <div class="pokeball-loading-container">
+                <div class="pokeball-loading">
+                    <img src="./img/icons/pokeball.png">
+                </div>
+                <p>loading pokemons...</p>
+            </div>
+            <div id="pop-up" class="pop-up-main display-none">
+                <div id="pop-up-bg" onclick="ClosePopUp()" class="testBack">
+
+                </div>
+                <div class="pop-up-wrapper">
+                    <div id="pop-up-left" class="pop-up-left">
+                    </div>
+
+                    <div id="pop-up-right" class="pop-up-right">
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div id="loadButton" onclick="LoadMoreButton()" class="load-more-section display-none">
+            <img src="./img/icons/download.png">
+            <p>load more pokemon..</p>
+        </div>
+        <footer class="footer">
+            <a>Impress</a>
+            <a href="www.jansteindorf.com">made by Jan Steindorf</a>
+        </footer>
+    </div>
+
+
+</body>
+
+</html>
